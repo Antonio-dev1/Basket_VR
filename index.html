@@ -12,22 +12,81 @@
     <body>
        <a-scene>
         <a-assets>
+
+            </a-asset-item>
             <a-asset-item id="court"
                           origin="anonymous"
-                          src="https://raw.githubusercontent.com/Antonio-dev1/Basket_VR/main/assets/light_basket_court/scene.gltf?token=GHSAT0AAAAAACHFQNMNAFFFJBMVR4JLAXWAZIQBFDQ"/>
+                          src="./assets/light_basket_court/scene.gltf"/>
+            <a-asset-item id="player1" origin="anonymous" src="./assets/jump_2/scene.gltf"></a-asset-item>
+
+            <a-asset-item id="basketball" src="./assets/light_basket_court/basketball.glb"/>
+            <a-asset-item id="gorilla" src="./assets/gorilla_basketball/scene.gltf"></a-asset-item>
+            <img id="outdoor-parking" src="./assets/Imgs/outdoor-city.jpg"/>
+            <img id="granite" src="./assets/Imgs/grunge-wall-texture.jpg"/>
+            <img id="granite-nm" src="./assets/Imgs/grunge-wall-texture-nm.png"/>
+            <img id="kobe" src="./assets/Imgs/kobe-bryant-img.jpg"/>
+            <img id="metal" src="./assets/Imgs/dirty-metal-texture.jpg"/>
+            <img id="metal-nm" src="./assets/Imgs/dirty-nm.png"/>
+            <img id="lakers-sky" src="./assets/Imgs/skate-park.jpg"/>
+            <img id="paper" src="./assets/Imgs/paper-texture.jpg"/>
+            <img id="paper-nm" src="./assets/Imgs/paper-nm.png"/>
+        </a-asset-item>
+
             </a-assets>
 
-            <a-entity  gltf-model = "#court"
-                       position="0 0 0"
-                       >
+            <a-camera position="-200 400 600"></a-camera>
+            <a-sky src="#lakers-sky" radius="1000"></a-sky>
+
+           <a-plane color="black" position="0 0 0" rotation="-90 0" width="100" height="100" scale="10 10 10" material="color:white;
+           src:#granite; normal-map:#granite-nm; repeat: 100 100">
+
+           <a-entity gltf-model="#court"
+           position="0 -5 10"
+           rotation="90 0 0"
+           scale="10 10 10"
+           >
+
+           
+
+           <a-entity gltf-model="#basketball"
+           position="2.25 0.3 1"
+           rotation="45 0 0"
+           scale="0.05 0.05 0.05"
+           >
+           </a-entity>
+           <a-entity gltf-model="#gorilla"
+           position="-2.25 0.5 1"
+           rotation="30 130 -10"
+           scale="0.5 0.5 0.5"
+           >
+           </a-entity>
+
+           <a-entity gltf-model="#player1"
+           position="1.5 1 0"
+           rotation="0 0 0"
+           scale="0.2 0.2 0.2"
+           >
+
+           
+
+        </a-entity>
+
+</a-entity>
 
 
+    <a-cylinder color="black" position="35 -40 10" height="30" rotation="90 0 0" scale="1 1 1" material=" color:white; src:#metal;
+    normal-map:#metal-nm; repeat:10 10;">
 
-            </a-entity>
+        <a-box position="0 15 1" height="5" width="10" color="blue" scale="3 3 3" material="color:white; src:#paper; normal-map:#paper-nm; repeat:10 10;">
+            <a-image src="#kobe" position="0 0 0.8" height="5" width="10" rotation="0 0 0" scale="1 1 1">
+        </a-box>
+    </a-cylinder>
+        
+        
+        </a-plane>
 
 
        </a-scene>
         
-        <script src="" async defer></script>
     </body>
 </html>
